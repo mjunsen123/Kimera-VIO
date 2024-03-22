@@ -15,8 +15,8 @@ Alternatively, you may install the dependencies and Kimera from \"source\" as de
 
 - Third-party dependencies:
 
-  - [GTSAM](https://github.com/borglab/gtsam) >= 4.1
-  - [OpenCV](https://github.com/opencv/opencv) >= 3.4
+  - [GTSAM](https://github.com/borglab/gtsam) >= 4.3
+  - [OpenCV](https://github.com/opencv/opencv) >= 4.9
   - [OpenGV](https://github.com/laurentkneip/opengv)
   - [Glog](http://rpg.ifi.uzh.ch/docs/glog.html), [Gflags](https://gflags.github.io/gflags/), [Gtest](https://github.com/google/googletest/blob/master/googletest/docs/primer.md) (installed automagically).
   - [DBoW2](https://github.com/dorian3d/DBoW2)
@@ -45,13 +45,13 @@ sudo apt-get install -y libboost-all-dev
 brew install vtk
 ```
 
-  - On Ubuntu 20.04
+  - On Ubuntu 22.04
 ```bash
-# (libvtk5-dev, libgtk2.0-dev in ubuntu 16.04)
+# vtk7 not available in ubuntu 20.04
 sudo apt-get install -y \
       build-essential unzip pkg-config \
       libjpeg-dev libpng-dev libtiff-dev \
-      libvtk7-dev \
+      libvtk9-dev \
       libgtk-3-dev \
       libparmetis-dev \
       libatlas-base-dev gfortran
