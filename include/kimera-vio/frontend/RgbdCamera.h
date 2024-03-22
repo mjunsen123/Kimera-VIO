@@ -14,7 +14,7 @@
 
 #pragma once
 #include <opencv2/core.hpp>
-#include <opencv2/viz/types.hpp>
+#include <opencv2/viz.hpp>
 
 #include "kimera-vio/backend/VioBackend-definitions.h"
 #include "kimera-vio/frontend/Camera.h"

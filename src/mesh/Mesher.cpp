@@ -1600,7 +1600,7 @@ void Mesher::extractLmkIdsFromTriangleCluster(
   lmk_ids->resize(0);
 
   Mesh3D::Polygon polygon;
-  for (const size_t& polygon_idx : triangle_cluster.triangle_ids_) {
+  for (const size_t polygon_idx : triangle_cluster.triangle_ids_) {
     CHECK(mesh_3d_.getPolygon(polygon_idx, &polygon))
         << "Polygon, with idx " << polygon_idx << ", is not in the mesh.";
     appendLmkIdsOfPolygon(polygon, lmk_ids, points_with_id_vio);

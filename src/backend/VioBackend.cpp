@@ -1434,7 +1434,7 @@ bool VioBackend::updateSmoother(Smoother::Result* result,
     gtsam::NonlinearFactorGraph nfg;
 
     // Only add priors on first state and the state nearest the failure
-    for (const gtsam::Symbol& key : prior_keys) {
+    for (const gtsam::Symbol key : prior_keys) {
       CHECK(values.exists(key));
       LOG(ERROR) << "Adding prior on key: " << key.chr() << key.index();
       switch (key.chr()) {

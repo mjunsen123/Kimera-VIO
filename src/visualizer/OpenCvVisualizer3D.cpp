@@ -466,7 +466,7 @@ void OpenCvVisualizer3D::visualizeFactorGraph(
   // them, the active ones will be colored later.
   static constexpr bool draw_inactive_poses = false;
   if (draw_inactive_poses) {
-    for (const std::pair<std::string, cv::Affine3d>& widget_id_pose_pair :
+    for (const std::pair<const std::__cxx11::basic_string<char>, cv::Affine3<double> >& widget_id_pose_pair :
          widget_id_to_pose_map_) {
       const auto& widget_id = widget_id_pose_pair.first;
       (*widgets_map)[widget_id] = std::make_unique<cv::viz::WCameraPosition>(
@@ -1210,7 +1210,7 @@ void OpenCvVisualizer3D::visualizePoints3D(
       1, lmk_id_to_lmk_type_map.size(), CV_8UC3, cloud_color_);
   cv::Point3f* data = point_cloud.ptr<cv::Point3f>();
   size_t i = 0;
-  for (const std::pair<LandmarkId, gtsam::Point3>& id_point : points_with_id) {
+  for (const std::pair<const long int, Eigen::Matrix<double, 3, 1> >& id_point : points_with_id) {
     const gtsam::Point3& point_3d = id_point.second;
     data[i].x = static_cast<float>(point_3d.x());
     data[i].y = static_cast<float>(point_3d.y());
@@ -1482,7 +1482,7 @@ void OpenCvVisualizer3D::visualizeConvexHull(const TriangleCluster& cluster,
 
   std::vector<cv::Point2f> points_2d;
   std::vector<float> z_s;
-  for (const size_t& triangle_id : cluster.triangle_ids_) {
+  for (const size_t triangle_id : cluster.triangle_ids_) {
     const size_t& triangle_idx = std::round(triangle_id * 4);
     LOG_IF(FATAL, triangle_idx + 3 >= static_cast<size_t>(polygons_mesh.rows))
         << "Visualizer3D: an id in triangle_ids_ is too large.";
@@ -1911,7 +1911,7 @@ void OpenCvVisualizer3D::colorMeshByClusters(const std::vector<Plane>& planes,
     cv::viz::Color cluster_color = cv::viz::Color::gray();
     getColorById(cluster.cluster_id_, &cluster_color);
 
-    for (const size_t& triangle_id : cluster.triangle_ids_) {
+    for (const size_t triangle_id : cluster.triangle_ids_) {
       size_t triangle_idx = std::round(triangle_id * 4);
       DCHECK_LE(triangle_idx + 3, polygons_mesh.rows)
           << "Visualizer3D: an id in triangle_ids_ is too large.";
