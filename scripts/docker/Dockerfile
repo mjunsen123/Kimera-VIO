@@ -49,7 +49,7 @@ RUN git clone https://github.com/borglab/gtsam.git && \
       -DGTSAM_USE_SYSTEM_EIGEN=ON \
       -DGTSAM_USE_SYSTEM_METIS=ON \
       .. && \
-      make -j$(nproc) install
+      make -j4 install
 
 # Install Open_GV
 RUN git clone https://github.com/marcusabate/opengv && \
@@ -60,7 +60,7 @@ RUN git clone https://github.com/marcusabate/opengv && \
       cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_PREFIX=/usr/local \
       .. && \
-      make -j$(nproc) install
+      make -j4 install
 
 # Install DBoW2
 COPY .patches/fix_vocab.patch dbow2.patch
@@ -70,7 +70,7 @@ RUN cd DBoW2 && \
       mkdir build && \
       cd build && \
       cmake .. && \
-      make -j$(nproc) install
+      make -j4 install
 
 # Install RobustPGO
 ADD https://api.github.com/repos/MIT-SPARK/Kimera-RPGO/git/refs/heads/master version.json
@@ -79,8 +79,8 @@ RUN cd Kimera-RPGO && \
       mkdir build && \
       cd build && \
       cmake .. && \
-      make -j$(nproc) install
+      make -j4 install
 
 # Install Kimera-VIO
 RUN git clone https://github.com/MIT-SPARK/Kimera-VIO.git
-RUN cd Kimera-VIO && mkdir build && cd build && cmake .. && make -j$(nproc)
+RUN cd Kimera-VIO && mkdir build && cd build && cmake .. && make -j4
