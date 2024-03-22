@@ -15,7 +15,7 @@ Alternatively, you may install the dependencies and Kimera from \"source\" as de
 
 - Third-party dependencies:
 
-  - [GTSAM](https://github.com/borglab/gtsam) >= 4.3
+  - [GTSAM](https://github.com/borglab/gtsam) >= 4.2
   - [OpenCV](https://github.com/opencv/opencv) >= 4.9
   - [OpenGV](https://github.com/laurentkneip/opengv)
   - [Glog](http://rpg.ifi.uzh.ch/docs/glog.html), [Gflags](https://gflags.github.io/gflags/), [Gtest](https://github.com/google/googletest/blob/master/googletest/docs/primer.md) (installed automagically).
